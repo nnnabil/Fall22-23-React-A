@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -13,6 +14,7 @@ import ProductDetail from './Components/ProductDetail';
 import ShowMessage from './Components/ShowMessage';
 import ColorState from './Components/ColorState';
 import EffectHookCheck from './Components/EffectHookCheck';
+import AllPosts from './Components/AllPosts';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -28,6 +30,7 @@ root.render(
       <Route exact path='/message' element={<ShowMessage/>} />
       <Route exact path='/color' element={<ColorState/>} />
       <Route exact path='/effect' element={<EffectHookCheck/>} />
+      <Route exact path='/posts' element={<AllPosts/>} />
       </Routes>
       <Foot/>
     </Router>
