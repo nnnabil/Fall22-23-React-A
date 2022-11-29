@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
-import axios from "axios";
+import axiosConfig from './axiosConfig';
 const APIProducts = ()=>{
 
         const [products, setProducts] = useState([]);
     
         useEffect(()=>{
-            axios.get("http://127.0.0.1:8000/api/products/list")
+            axiosConfig.get("products/list")
             .then(resp=>{
                 console.log(resp.data);
                 setProducts(resp.data);

@@ -10,7 +10,8 @@ const Head = () => {
             <Link to="/color">Color State</Link>
             <Link to="/effect">Effect State</Link>
             <Link to="/posts">All Posts</Link>
-            <Link exact to="/products">All Products</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/products">All Products</Link>
         </div>
     )
 }
