@@ -1,10 +1,12 @@
 import React, {useState, userEffect} from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = ()=>{
     let[token, setToken]= useState("");
     let[name, setName] = useState("");
     let[password, setPassword] =useState("");
+    const navigate = useNavigate();
 
     const loginSubmit= ()=>{
         var obj = {username: name, password: password};
@@ -17,6 +19,11 @@ const Login = ()=>{
             var user = {userId: token.userid, access_token:token.token};
             localStorage.setItem('user',JSON.stringify(user));
             console.log(localStorage.getItem('user'));
+            if (token == "No user found"){
+                navigate('/login');
+            }else{
+                navigate('/products')
+            }
         }).catch(err=>{
             console.log(err);
         });
